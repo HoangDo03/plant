@@ -4,44 +4,10 @@ function redirect() {
     id = id[1];
     console.log = (id);
     switch (id) {
-        // case "dashboard":
-        // {
-        //     document.getElementById('main').innerHTML="nope";
-        //     break;
-        // }
+   
         case "inventory":
             {
-                //     document.getElementById('main').innerHTML=` 
-                //     <div id="inventory" >
-                //     <div class="form">
-                //         <div class="form_group">
-                //             <label for="id">ID</label>
-                //             <input type="number" id="id" class="form_input">
-                //             <div class="error_message"></div>
-                //         </div>
-                //         <div class="form_group">
-                //             <label for="image">Image</label>
-                //             <input type="file" id="image" class="form_input">
-                //             <img src="" alt="" id="preview">
-                //             <div class="error_message"></div>
-                //         </div>
-                //         <div class="form_group">
-                //             <label for="title">title</label>
-                //             <input type="text" id="title" class="form_input">
-                //             <div class="error_message"></div>
-                //         </div>
-                //         <div class="form_group">
-                //             <label for="cost">Cost </label>
-                //             <input type="text" id="cost" class="form_input">
-                //             <div class="error_message"></div>
-                //         </div>
-                //         <button id="btn" onclick="add()">Add New</button>
-                //     </div>
-
-                //     <table class="table" id="table">
-
-                //     </table>
-                // </div>`;
+                
                 document.getElementById('cards').style.display = 'none';
                 document.getElementById('inventory').style.display = 'block';
                 document.getElementById('statistic').style.display = 'none';
@@ -56,34 +22,7 @@ function redirect() {
             }
         case "customers":
             {
-                // document.getElementById('inventory').style.display='none';              
-                // document.getElementById('main').innerHTML=` 
-                // <div id="customer" >
-                //     <form name="" onsubmit="return check_add();">
-                //         <div class="formuser">
-                //                 <div class="form_user">
-                //                     <label for="user">Username</label>
-                //                     <input type="text" id="user" class="form_input">
-                //                     <div class="error_message"></div>
-                //                 </div>
-                //                 <div class="form_user">
-                //                     <label for="pass">Password</label>
-                //                     <input type="text" id="pass" class="form_input">
-                //                     <div class="error_message"></div>
-                //                 </div>
-                //                 <select name="selectuser" id="idselect">
-                //                     <option value="-1">Select user</option>
-                //                     <option value="0" id="kh">Customer</option>
-                //                     <option value="1" id="admin">Admin</option>
-                //                 </select>
-                //                 <button id="showuser" onclick="create();">Add user</button>
-                //         </div>
-                //     </form>
-                //     <table class="table" id="table">
-
-                //     </table>
-                //     </div>`;
-                // break;
+               
                 document.getElementById('cards').style.display = 'none';
                 document.getElementById('customer').style.display = 'block';
                 document.getElementById('statistic').style.display = 'none';
@@ -343,7 +282,7 @@ const product = [
     },
 ];
 
-//import{product} from "./js/data.js"
+
 function createProduct() {
     localStorage.setItem('product', JSON.stringify(product));
 }
@@ -461,14 +400,10 @@ function deleteItem(IDproductDel) {
 
 function editItem(id) {
     var productArray = JSON.parse(localStorage.getItem('product'));
-    // document.getElementById('btn').classList.add("hidden");
-    // document.getElementById('btn-update').classList.remove("hidden");
     for (let i = 0; i < productArray.length; i++) {
         if (productArray[i].id == id) {
             document.getElementById('id').value = productArray[i].id;
             document.getElementById('preview').attributes['src'].value = productArray[i].image;//lay link anh
-            //document.getElementById('image').fileInput=productArray[i].image;
-            // document.getElementById('image').fileInput = productArray[i].image;
             document.getElementById('title').value = productArray[i].title;
             document.getElementById('describe').value = productArray[i].describe;
             document.getElementById('category').value = productArray[i].category;
@@ -484,7 +419,6 @@ function editItem(id) {
 window.onload = function () {
     let productArray = JSON.parse(localStorage.getItem('product'));
     deleteItem(productArray);
-    //editItem(productArray);
     createProduct(productArray);
     showProductList(productArray);
 }
@@ -576,17 +510,10 @@ function createNewuser() {
 
 window.onload = function () {
     redirect();
-    // document.getElementById("btn").classList.remove("hidden");
-    // document.getElementById("btn-update").classList.add("hidden");
-    //let productArray = JSON.parse(localStorage.getItem("product"));
-    //showProductList(productArray);
+   
     deleteItem();
     editItem();
-    //createProduct(productArray);
     let userArray = JSON.parse(localStorage.getItem('userArr'));
-    //showUserList(userArray);
-    //createnewAdmin();
-    //createnewCustomer();
     deleteuser();
 };
 //order
@@ -615,3 +542,4 @@ function showCustomerOrder() {
     }
     document.getElementById('table-3').innerHTML = table;
 }
+

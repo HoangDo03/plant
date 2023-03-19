@@ -120,7 +120,6 @@ function agree() {
     cartList.forEach((cart) => {
         orderList.push({
             ...cart,
-            //User: idPerson,
             CustomerName: customer,
             PriceTotal: priceTotal,
             createdAt: today.toLocaleDateString(),

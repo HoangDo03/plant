@@ -234,7 +234,7 @@ const product = [
     },
 ];
 
-//localStorage.setItem("product", JSON.stringify(product));
+
 
 let productArr;
 
